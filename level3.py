@@ -30,6 +30,10 @@ def level3(name, xp, shopping_points):
             print("Also you've been rewarded extra 10XP for choosing the correct option")
             xp+=10
             print("Your current XP is now " + str(xp))
+            print("=================================")
+            print("Good job - on to the next level now. Best of Luck! ")
+
+            level4(name, xp, shopping_points)
     elif choice == "C" or choice.lower().strip() == "c":
             print("Great choice!")
             print("You have crossed the river now. You are 1 step ahead in your treasure hunt.")
