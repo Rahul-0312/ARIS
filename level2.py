@@ -17,6 +17,7 @@ def level2(name, xp, shopping_points):
         print("=================================")
         print("Game over :( ")
 
+#Use line seperators to get a better view of what's happening in terminal
     elif pair_choice.lower().strip() == "no" or pair_choice.lower().strip() == "n":
         print("Good choice not pairing up or you would have been killed!")
         xp+= 20
