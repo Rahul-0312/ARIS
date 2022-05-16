@@ -10,7 +10,7 @@ def level1(name, xp, shopping_points):
     print("You have " + str(xp) + " XP and " + str(shopping_points) + " points for shopping!")
     print("=================================")
 
-
+#Take an argument to correctly display the level number
     print("========== LEVEL 1 ==========")
     print("Now, You have 100 points, choose items from the item list below that you will be taking with you on this challenge using those points")
 
@@ -69,6 +69,7 @@ def level1(name, xp, shopping_points):
 
         print("=================================")
 
+#friendly_itemlist - A dictionary should be implemented to have value as the no. of items and key to be the item itself.
     friendly_itemlist = ', '.join(item_list)
     print("Your bag has - " + friendly_itemlist) # user friendly format list
     print("Points left - " + str(shopping_points) + " points")
