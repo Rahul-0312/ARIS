@@ -1,7 +1,7 @@
 import os
 from level3 import *
 
-def level2(name, xp, shopping_points):
+def level2(name, xp, shopping_points, item_list):
 
     print("========== LEVEL 2 ==========")
     print("You are on your way following the map to the river that you need to "
@@ -26,5 +26,5 @@ def level2(name, xp, shopping_points):
         print("=================================")
         print("Good job - on to level 3")
 
-        level3(name, xp, shopping_points)
+        level3(name, xp, shopping_points, item_list)
 

@@ -1,6 +1,6 @@
 import os
 from level4 import *
-def level3(name, xp, shopping_points):
+def level3(name, xp, shopping_points, item_list):
     
     print("========== LEVEL 3 ==========")
     print("=================================")
@@ -33,7 +33,7 @@ def level3(name, xp, shopping_points):
             print("=================================")
             print("Good job - on to the next level now. Best of Luck! ")
 
-            level4(name, xp, shopping_points)
+            level4(name, xp, shopping_points, item_list)
     elif choice == "C" or choice.lower().strip() == "c":
             print("Great choice!")
             print("You have crossed the river now. You are 1 step ahead in your treasure hunt.")
@@ -44,4 +44,4 @@ def level3(name, xp, shopping_points):
             print("=================================")
             print("Good job - on to the next level now. Best of Luck! ")
 
-            level4(name, xp, shopping_points)
+            level4(name, xp, shopping_points, item_list)

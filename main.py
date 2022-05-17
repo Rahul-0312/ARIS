@@ -1,5 +1,7 @@
 from level1 import *
 import os
+
+from level2 import level2
 os.system('clear') #clears the terminal before running the script
 
 print("WELCOME TO ARIS")
@@ -20,10 +22,10 @@ if response.lower().strip() == "yes" or response.lower().strip() == "y":
 
 
     #Level 1
-    [xp, shopping_points] = level1(name, xp, shopping_points)
+    [xp, shopping_points, item_list] = level1(name, xp, shopping_points)
    
     #Level 2
-    level2(name, xp, shopping_points)
+    level2(name, xp, shopping_points, item_list)
    
 
 

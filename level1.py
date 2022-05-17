@@ -76,6 +76,6 @@ def level1(name, xp, shopping_points):
     print("XP - " + str(xp) + " XP")
     print("=================================")
 
-    return xp, shopping_points
+    return xp, shopping_points, item_list
 
 
