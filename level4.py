@@ -50,4 +50,4 @@ def level4(name, xp, shopping_points, item_list):
             break
     print("Well Done! You've defeated the monster!")
     print(name, xp, shopping_points)
-    level5(name, xp, shopping_points)
+    level5(name, xp, shopping_points, item_list)
