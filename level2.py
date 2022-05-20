@@ -1,5 +1,6 @@
 import os
 from level3 import *
+from level1 import *
 
 
 def level2(name, xp, shopping_points, item_list):
@@ -21,7 +22,8 @@ def level2(name, xp, shopping_points, item_list):
     elif pair_choice.lower().strip() == "no" or pair_choice.lower().strip() == "n":
         print("Good choice not pairing up or you would have been killed!")
         xp += 20
-        print("You have been given a " + str(20) + " XP bonus!")
+        shopping_points+=20
+        print("You have been given a " + str(20) + " XP bonus! and a " + str(30) + "shopping points bonus!")
         print("You now have - " + str(xp) + " XP")
         print("=================================")
         print("Good job - on to level 3")
