@@ -1,6 +1,7 @@
 import os
 from level8 import *
 
+#Let's brainstorm on this if we have time
 
 def level7(name, xp, shopping_points, item_list):
     # print(name, xp, shopping_points)

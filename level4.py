@@ -1,5 +1,6 @@
 import os
 from level5 import *
+from level1 import *
 
 
 def level4(name, xp, shopping_points, item_list):
@@ -15,8 +16,13 @@ def level4(name, xp, shopping_points, item_list):
     print("Your bag has - ", friendly_itemlist)
     # We need item_list here in level 4
     while (1):
+
         print("Monster XP - ", str(monster_xp))
         print("Your XP - ", str(xp))
+
+        if xp<=0:
+            print("Uh oh! You're defeated by the monster! Better luck next time :(")
+            break
 
         # Your bag has - Medical Kit, Sword, Gun
         user_choice = input("Choose your weapon!\n M/S/G/B where M- Medical Kit, and so onnnnnnn\n").lower().strip()
@@ -49,6 +55,8 @@ def level4(name, xp, shopping_points, item_list):
             xp -= 25
         else:
             break
-    print("Well Done! You've defeated the monster!")
+    print("Well Done! You've defeated the monster! Take away your rewards - Extra 20 XP and 10 shopping points")
+    xp+=20
+    shopping_points+=10
     # print(name, xp, shopping_points)
     level5(name, xp, shopping_points, item_list)
