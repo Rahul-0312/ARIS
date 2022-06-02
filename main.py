@@ -2,27 +2,31 @@ from level1 import *
 import os
 
 from level2 import level2
+from voice import speak
+
 os.system('clear') #clears the terminal before running the script
 
-print("WELCOME TO ARIS")
-print("=================================")
-print("Do you want to play the game?")
+
+speak("WELCOME TO ARIS")
+print("=================================\n")
+speak("Do you want to play the game?")
 
 while(1):
-
-    response = input("Yes (Y) or No (N) ")
+    speak("If Yes enter (Yes or y) else No (No or n)")
+    response = input()
     name = ""
     xp = 50
     shopping_points = 100
 
 
-    print("=================================")
+    print("\n=================================\n")
 
     if response.lower().strip() == "yes" or response.lower().strip() == "y":
-        print("Welcome to the game")
-        print("=================================")
-        name = input("Enter your name: ")
-        print("Welcome to ARIS, " + name)
+        speak("Welcome to the game")
+        print("\n=================================\n")
+        speak("Enter your name: ")
+        name = input()
+        speak("\nWelcome to ARIS, " + name+"!\n")
 
 
         #Level 1
@@ -35,8 +39,8 @@ while(1):
 
 
     elif response.lower().strip() == "no" or response.lower().strip() == "n":
-        print("Goodbye")
+        speak("Goodbye")
         break
 
     else:
-        print("Please choose whether Yes/(Y) or No/(N)")
+        speak("Please choose right option!")
