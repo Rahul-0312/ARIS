@@ -9,11 +9,11 @@ def level8(name, xp, shopping_points, item_list):
     print("To win your treasure and end the game, you must correctly answer 3 out 5 questions")
 
     print("QUESTION 1")
-    print("Who is the dog?")
+    print("What is a correct syntax to output 'Hello World' in Python?")
     question1 = {
-        "A": "Bingo",
-        "B": "Bruno",
-        "C": "Ella"
+        "A": "print('Hello  World')",
+        "B": "echo('Hello World')",
+        "C": "p('Hello World')"
     }
     print(*[str(option) + ': ' + str(answer) for option, answer in question1.items()], sep='\n')
     q1_count_chance = 2
@@ -36,12 +36,12 @@ def level8(name, xp, shopping_points, item_list):
 
     q2_count_chance = 2
     print("QUESTION 2")
-    print("Who is the dog?")
+    print("Which one is NOT a legal variable name?")
 
     question2 = {
-        "A": "Bingo",
-        "B": "Bruno",
-        "C": "Ella"
+        "A": "_myvar",
+        "B": "Myvar",
+        "C": "my-var"
     }
     print(*[str(option) + ': ' + str(answer) for option, answer in question2.items()], sep='\n')
     while q2_count_chance >= 1:
@@ -63,11 +63,11 @@ def level8(name, xp, shopping_points, item_list):
 
     q3_count_chance = 2
     print("QUESTION 3")
-    print("Who is the dog?")
+    print("Which language does Terraform support from the below list?")
     question3 = {
-        "A": "Bingo",
-        "B": "Bruno",
-        "C": "Ella"
+        "A": "Hashicorp Language & JSON",
+        "B": "XML",
+        "C": "Plaintext"
     }
     print(*[str(option) + ': ' + str(answer) for option, answer in question3.items()], sep='\n')
     while q3_count_chance >= 1:
@@ -90,11 +90,11 @@ def level8(name, xp, shopping_points, item_list):
 
     q4_count_chance = 2
     print("QUESTION 4")
-    print("Who is the dog?")
+    print("Which is not true about cloud computing?")
     question4 = {
-        "A": "Bingo",
-        "B": "Bruno",
-        "C": "Ella"
+        "A": "Cloud computing will decrease your capital expenses.",
+        "B": "Cloud computing resources are usually constrained to a single region or availability zone.",
+        "C": "Cloud service models include IaaS, SaaS and PaaS."
     }
     print(*[str(option) + ': ' + str(answer) for option, answer in question4.items()], sep='\n')
     while q4_count_chance >= 1:
@@ -116,11 +116,11 @@ def level8(name, xp, shopping_points, item_list):
 
     q5_count_chance = 2
     print("QUESTION 5")
-    print("Who is the dog?")
+    print("For which of the following reasons would you choose a region pair?")
     question5 = {
-        "A": "Bingo",
-        "B": "Bruno",
-        "C": "Ella"
+        "A": "To ensure compliance with local privacy regulations.",
+        "B": "To replicate resources across longer distances to reduce impact of natural disasters or network outages that affect multiple nearby data centers.",
+        "C": "To improve communications between pairs of applications."
     }
     print(*[str(option) + ': ' + str(answer) for option, answer in question5.items()], sep='\n')
     while q5_count_chance >= 1:
