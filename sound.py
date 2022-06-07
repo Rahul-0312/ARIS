@@ -31,3 +31,39 @@ def play_win_points():
 
 def level_complete():
     return playsound("sounds/level_complete.wav")
+
+
+def play_first_monster():
+    return playsound("sounds/first_monster.wav")
+
+
+def play_first_monster_hit():
+    return playsound("sounds/first_monster_hit.wav")
+
+
+def play_sword_hit():
+    return playsound("sounds/sword_hit.wav")
+
+
+def play_gun_hit():
+    return playsound("sounds/gun_hit.wav")
+
+
+def play_bow_and_arrow_hit():
+    return playsound("sounds/bow_and_arrow_hit.wav")
+
+
+def play_second_monster():
+    return playsound("sounds/second_monster.wav")
+
+
+def play_second_monster_hit():
+    return playsound("sounds/second_monster_hit.wav")
+
+
+def play_player_dies():
+    return playsound("sounds/player_dies.wav")
+
+
+def play_monster_dies():
+    return playsound("sounds/monster_dies.wav")

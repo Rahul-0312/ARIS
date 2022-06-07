@@ -29,7 +29,8 @@ while(1):
         speak("\nWelcome to ARIS, " + name+"!\n")
 
         # Level 1
-        level1(name, xp, shopping_points)
+        # level1(name, xp, shopping_points)
+        level7('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword', 'Bow and Arrow', 'Gun'])
         break
 
         # Level 2 is called from level 1 now

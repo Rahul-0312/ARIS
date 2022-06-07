@@ -1,6 +1,7 @@
 from voice import speak
 import sound
 
+
 def level8(name, xp, shopping_points, item_list):
     # print(name, xp, shopping_points)
     score = 0
@@ -17,10 +18,10 @@ def level8(name, xp, shopping_points, item_list):
         "C": "p('Hello World')"
     }
     speak("Your Options are as follows.\n"
-            + "A: " + question1["A"] + ",\n"
-            + "B: " + question1["B"] + ",\n"
-            + "C: " + question1["C"] + "\n"
-            )
+          + "A: " + question1["A"] + ",\n"
+          + "B: " + question1["B"] + ",\n"
+          + "C: " + question1["C"] + "\n"
+          )
     q1_count_chance = 2
     while q1_count_chance >= 1:
         answer1 = input("\nChoose A or B or C : ")
@@ -53,10 +54,10 @@ def level8(name, xp, shopping_points, item_list):
         "C": "my-var"
     }
     speak("Your Options are as follows.\n"
-            + "A: " + question2["A"] + ",\n"
-            + "B: " + question2["B"] + ",\n"
-            + "C: " + question2["C"] + "\n"
-            )
+          + "A: " + question2["A"] + ",\n"
+          + "B: " + question2["B"] + ",\n"
+          + "C: " + question2["C"] + "\n"
+          )
     while q2_count_chance >= 1:
         answer2 = input("\nChoose A or B or C : ")
         if answer2.lower().strip() == "c" or answer2 == "C":
@@ -88,10 +89,10 @@ def level8(name, xp, shopping_points, item_list):
         "C": "Plaintext"
     }
     speak("Your Options are as follows.\n"
-            + "A: " + question3["A"] + ",\n"
-            + "B: " + question3["B"] + ",\n"
-            + "C: " + question3["C"] + "\n"
-            )
+          + "A: " + question3["A"] + ",\n"
+          + "B: " + question3["B"] + ",\n"
+          + "C: " + question3["C"] + "\n"
+          )
     while q3_count_chance >= 1:
         answer3 = input("\nChoose A or B or C : ")
         if answer3.lower().strip() == "a" or answer3 == "A":
@@ -124,10 +125,10 @@ def level8(name, xp, shopping_points, item_list):
         "C": "Cloud service models include IaaS, SaaS and PaaS."
     }
     speak("Your Options are as follows.\n"
-            + "A: " + question4["A"] + ",\n"
-            + "B: " + question4["B"] + ",\n"
-            + "C: " + question4["C"] + "\n"
-            )
+          + "A: " + question4["A"] + ",\n"
+          + "B: " + question4["B"] + ",\n"
+          + "C: " + question4["C"] + "\n"
+          )
     while q4_count_chance >= 1:
         answer4 = input("\nChoose A or B or C : ")
         if answer4.lower().strip() == "b" or answer4 == "B":
@@ -159,10 +160,10 @@ def level8(name, xp, shopping_points, item_list):
         "C": "To improve communications between pairs of applications."
     }
     speak("Your Options are as follows.\n"
-            + "A: " + question5["A"] + ",\n"
-            + "B: " + question5["B"] + ",\n"
-            + "C: " + question5["C"] + "\n"
-            )
+          + "A: " + question5["A"] + ",\n"
+          + "B: " + question5["B"] + ",\n"
+          + "C: " + question5["C"] + "\n"
+          )
     while q5_count_chance >= 1:
         answer5 = input("\nChoose A or B or C : ")
         if answer5.lower().strip() == "b" or answer5 == "B":
