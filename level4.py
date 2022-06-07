@@ -1,6 +1,7 @@
 import os
 from level5 import *
 from level1 import *
+import sound
 
 
 def level4(name, xp, shopping_points, item_list):
@@ -22,6 +23,7 @@ def level4(name, xp, shopping_points, item_list):
 
         if xp<=0:
             print("Uh oh! You're defeated by the monster! Better luck next time :(")
+            sound.play_game_over()
             break
 
         # Your bag has - Medical Kit, Sword, Gun
@@ -56,7 +58,8 @@ def level4(name, xp, shopping_points, item_list):
         else:
             break
     print("Well Done! You've defeated the monster! Take away your rewards - Extra 20 XP and 10 shopping points")
-    xp+=20
-    shopping_points+=10
+    xp += 20
+    shopping_points += 10
     # print(name, xp, shopping_points)
+    sound.level_complete()
     level5(name, xp, shopping_points, item_list)

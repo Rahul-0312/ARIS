@@ -1,5 +1,6 @@
 import os
 import pprint
+import sound
 
 
 def level8(name, xp, shopping_points, item_list):
@@ -22,10 +23,12 @@ def level8(name, xp, shopping_points, item_list):
         if answer1.lower().strip() == "a" or answer1 == "A":
             print("You picked: " + question1["A"])
             print("Correct!")
+            sound.play_correct_answer()
             score += 1
             q1_count_chance -= 2
         elif answer1.lower().strip() == "b" or answer1 == "B" or answer1.lower().strip() == "c" or answer1 == "C":
             print("Option chosen is incorrect")
+            sound.play_quiz_incorrect()
             q1_count_chance -= 2
         else:
             q1_count_chance -= 1
@@ -33,6 +36,7 @@ def level8(name, xp, shopping_points, item_list):
                 print("Please enter a letter between A and C")
             elif q1_count_chance == 0:
                 print("You have entered two letters not in the options. Question missed!")
+                sound.play_quiz_incorrect()
 
     q2_count_chance = 2
     print("QUESTION 2")
@@ -49,10 +53,12 @@ def level8(name, xp, shopping_points, item_list):
         if answer2.lower().strip() == "c" or answer2 == "C":
             print("You picked: " + question2["C"])
             print("Correct!")
+            sound.play_correct_answer()
             score += 1
             q2_count_chance -= 2
         elif answer2.lower().strip() == "b" or answer2 == "B" or answer2.lower().strip() == "a" or answer2 == "A":
             print("Option chosen is incorrect")
+            sound.play_quiz_incorrect()
             q2_count_chance -= 2
         else:
             q2_count_chance -= 1
@@ -60,6 +66,7 @@ def level8(name, xp, shopping_points, item_list):
                 print("Please enter a letter between A and C")
             elif q2_count_chance == 0:
                 print("You have entered two letters not in the options. Question missed!")
+                sound.play_quiz_incorrect()
 
     q3_count_chance = 2
     print("QUESTION 3")
@@ -75,10 +82,12 @@ def level8(name, xp, shopping_points, item_list):
         if answer3.lower().strip() == "a" or answer3 == "A":
             print("You picked: " + question3["A"])
             print("Correct!")
+            sound.play_correct_answer()
             score += 1
             q3_count_chance -= 2
         elif answer3.lower().strip() == "b" or answer3 == "B" or answer3.lower().strip() == "c" or answer3 == "C":
             print("Option chosen is incorrect")
+            sound.play_quiz_incorrect()
             q3_count_chance -= 2
         else:
             q3_count_chance -= 1
@@ -86,6 +95,7 @@ def level8(name, xp, shopping_points, item_list):
                 print("Please enter a letter between A and C")
             elif q3_count_chance == 0:
                 print("You have entered two letters not in the options. Question missed!")
+                sound.play_quiz_incorrect()
     # else statement is letter is not between a and c
 
     q4_count_chance = 2
@@ -102,10 +112,12 @@ def level8(name, xp, shopping_points, item_list):
         if answer4.lower().strip() == "b" or answer4 == "B":
             print("You picked: " + question4["B"])
             print("Correct!")
+            sound.play_correct_answer()
             score += 1
             q4_count_chance -= 2
         elif answer4.lower().strip() == "a" or answer4 == "A" or answer4.lower().strip() == "c" or answer4 == "C":
             print("Option chosen is incorrect")
+            sound.play_quiz_incorrect()
             q4_count_chance -= 2
         else:
             q4_count_chance -= 1
@@ -113,6 +125,7 @@ def level8(name, xp, shopping_points, item_list):
                 print("Please enter a letter between A and C")
             elif q4_count_chance == 0:
                 print("You have entered two letters not in the options. Question missed!")
+                sound.play_quiz_incorrect()
 
     q5_count_chance = 2
     print("QUESTION 5")
@@ -128,10 +141,12 @@ def level8(name, xp, shopping_points, item_list):
         if answer5.lower().strip() == "b" or answer5 == "B":
             print("You picked: " + question5["B"])
             print("Correct!")
+            sound.play_correct_answer()
             score += 1
             q5_count_chance -= 2
         elif answer5.lower().strip() == "a" or answer5 == "A" or answer5.lower().strip() == "c" or answer5 == "C":
             print("Option chosen is incorrect")
+            sound.play_quiz_incorrect()
             q5_count_chance -= 2
         else:
             q5_count_chance -= 1
@@ -139,12 +154,14 @@ def level8(name, xp, shopping_points, item_list):
                 print("Please enter a letter between A and C")
             elif q5_count_chance == 0:
                 print("You have entered two letters not in the options. Question missed!")
+                sound.play_quiz_incorrect()
 
     print("Your score is " + str(score) + " out of 5")
 
     if score >= 3:
         print("CONGRATULATIONS!")
         # celebration sound
+        sound.play_celebratory_song()
         print("You have won the treasure. A SUM OF £10000!")
 
     elif score < 3:

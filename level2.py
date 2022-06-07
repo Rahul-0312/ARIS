@@ -1,6 +1,7 @@
 import os
 from level3 import *
 from level1 import *
+import sound
 
 
 def level2(name, xp, shopping_points, item_list):
@@ -17,15 +18,17 @@ def level2(name, xp, shopping_points, item_list):
         print("You have 0 XP")
         print("=================================")
         print("Game over :( ")
+        sound.play_game_over_wrongchoice()
 
     # Use line separators to get a better view of what's happening in terminal
     elif pair_choice.lower().strip() == "no" or pair_choice.lower().strip() == "n":
         print("Good choice not pairing up or you would have been killed!")
+        sound.play_correct_answer()
         xp += 20
-        shopping_points+=20
-        print("You have been given a " + str(20) + " XP bonus! and a " + str(30) + "shopping points bonus!")
+        shopping_points += 20
+        print("You have been given a " + str(20) + " XP bonus! and a " + str(30) + " shopping points bonus!")
         print("You now have - " + str(xp) + " XP")
         print("=================================")
         print("Good job - on to level 3")
-
+        sound.level_complete()
         level3(name, xp, shopping_points, item_list)

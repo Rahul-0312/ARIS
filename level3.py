@@ -1,8 +1,10 @@
 import os
 from level4 import *
 from level1 import *
+import sound
+
+
 def level3(name, xp, shopping_points, item_list):
-    
     print("========== LEVEL 3 ==========")
     print("=================================")
     print("Finally you are near the river bank. Find out a way to "
@@ -16,35 +18,38 @@ def level3(name, xp, shopping_points, item_list):
     print("=================================")
 
     print("Choose your option! "
-    "Hint : Two of the options takes you a bit closer to the treasure while the other one leads to 'DEATH'")
+          "Hint : Two of the options takes you a bit closer to the treasure while the other one leads to 'DEATH'")
 
     choice = input("A, B or C  ")
 
     if choice == "A" or choice.lower().strip() == "a":
-            print("Uh Oh! The boat had a hole. You drowned")
-            print("You have 0 XP")
-            print("=================================")
-            print("Game over :( ")
+        print("Uh Oh! The boat had a hole. You drowned")
+        print("You have 0 XP")
+        print("=================================")
+        print("Game over :( ")
+        sound.play_game_over_wrongchoice()
     elif choice == "B" or choice.lower().strip() == "b":
-            print("Good choice!")
-            print("You have crossed the river now. You are 1 step ahead in your treasure hunt.")
-            print("Also you've been rewarded extra 10XP and 10 shopping points for choosing the correct option")
-            xp+=10
-            shopping_points+=10
-            print("Your current XP is now " + str(xp))
-            print("=================================")
-            print("Good job - on to the next level now. Best of Luck! ")
-
-            level4(name, xp, shopping_points, item_list)
+        print("Good choice!")
+        print("You have crossed the river now. You are 1 step ahead in your treasure hunt.")
+        print("Also you've been rewarded extra 10XP and 10 shopping points for choosing the correct option")
+        xp += 10
+        shopping_points += 10
+        print("Your current XP is now " + str(xp))
+        print("=================================")
+        print("Good job - on to the next level now. Best of Luck! ")
+        sound.play_correct_answer()
+        sound.level_complete()
+        level4(name, xp, shopping_points, item_list)
     elif choice == "C" or choice.lower().strip() == "c":
-            print("Great choice!")
-            print("You have crossed the river now. You are 1 step ahead in your treasure hunt.")
-            print("Also you've been rewarded extra 20XP and 20 shopping points for your bravery!")
-            xp+=20
-            shopping_points+=20
-            print("Your current XP is now " + str(xp))
+        print("Great choice!")
+        print("You have crossed the river now. You are 1 step ahead in your treasure hunt.")
+        print("Also you've been rewarded extra 20XP and 20 shopping points for your bravery!")
+        sound.play_correct_answer()
+        xp += 20
+        shopping_points += 20
+        print("Your current XP is now " + str(xp))
 
-            print("=================================")
-            print("Good job - on to the next level now. Best of Luck! ")
-
-            level4(name, xp, shopping_points, item_list)
+        print("=================================")
+        print("Good job - on to the next level now. Best of Luck! ")
+        sound.level_complete()
+        level4(name, xp, shopping_points, item_list)

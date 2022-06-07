@@ -1,7 +1,9 @@
 import os
 from level8 import *
+import sound
 
-#Let's brainstorm on this if we have time
+
+# Let's brainstorm on this if we have time
 
 def level7(name, xp, shopping_points, item_list):
     # print(name, xp, shopping_points)
@@ -86,13 +88,16 @@ def level7(name, xp, shopping_points, item_list):
 
     if xp <= 0:
         print("THE MONSTER DEFEATED YOU! GAME OVER!")
+        sound.play_game_over()
     elif monster_xp <= 0:
         print("YOU HAVE DEFEATED THE MONSTER!")
         print("Good job - on to level 8")
+        sound.level_complete()
         level8(name, xp, shopping_points, item_list)
     elif xp <= 0 and monster_xp <= 0:
         print("")
     else:
+        sound.level_complete()
         level8(name, xp, shopping_points, item_list)
 
 
