@@ -1,7 +1,8 @@
 from level8 import *
 from voice import speak
+import sound
 
-#Let's brainstorm on this if we have time
+# Let's brainstorm on this if we have time
 
 def level7(name, xp, shopping_points, item_list):
     game_over = False
@@ -31,6 +32,7 @@ def level7(name, xp, shopping_points, item_list):
         
         speak("The Monster's XP - " + str(monster_xp))
         if xp < 0:
+            sound.play_game_over()
             speak("Your XP - 0")
             speak("Uh oh! You're defeated by the monster! Better luck next time :(")
             speak("Game Over :(")
@@ -79,6 +81,7 @@ def level7(name, xp, shopping_points, item_list):
             break
     if not game_over:
         speak("Well Done! You've defeated the monster. Onto the last level\n")
+        sound.level_complete()
         level8(name, xp, shopping_points, item_list)
 
     # while xp > 0:

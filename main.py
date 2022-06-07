@@ -1,10 +1,11 @@
 from level1 import *
 import os
-
+import sound
 from level2 import level2
 from voice import speak
 
 os.system('clear') #clears the terminal before running the script
+
 
 
 speak("WELCOME TO ARIS")
@@ -18,7 +19,6 @@ while(1):
     xp = 50
     shopping_points = 100
 
-
     print("\n=================================\n")
 
     if response.lower().strip() == "yes" or response.lower().strip() == "y":
@@ -28,18 +28,19 @@ while(1):
         name = input()
         speak("\nWelcome to ARIS, " + name+"!\n")
 
-
-        #Level 1
+        # Level 1
         level1(name, xp, shopping_points)
         break
-    
-        #Level 2 is called from level 1 now
-    
-    
+
+        # Level 2 is called from level 1 now
+
+
 
 
     elif response.lower().strip() == "no" or response.lower().strip() == "n":
+
         speak("Goodbye")
+        sound.play_game_over()
         break
 
     else:
