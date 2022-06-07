@@ -1,10 +1,14 @@
+from voice import speak
+shopping_count = 1
 def shopping(xp, shopping_points):
-    print("You have " + str(xp) + " XP and " + str(shopping_points) + " points for shopping!")
-    print("=================================")
+    global shopping_count
+
+    speak("You have " + str(xp) + " XP and " + str(shopping_points) + " points for shopping!\n")
+    print("=================================\n")
 
     
-    print(
-        "Now, You have "  + str(shopping_points) + " points, choose items from the item list below that you will be taking with you on this challenge using those points")
+    speak(
+        "Now, let's Shop. Choose items from the item list below, that you will be taking with you on this challenge using the shopping points.\n")
 
     item_bag = {
         "item1": "Medical Kit",
@@ -13,58 +17,60 @@ def shopping(xp, shopping_points):
         "item4": "Bow and Arrow"
     }
 
-    print("INVENTORY: \n"
-          + item_bag["item1"] + " - 15 points \n"
-          + item_bag["item2"] + " - 25 points \n"
-          + item_bag["item3"] + " - 30 points \n"
-          + item_bag["item4"] + " - 20 points")
-    print("==============================================")
+    speak("The INVENTORY. \n"
+          + item_bag["item1"] + " - 15 points, \n"
+          + item_bag["item2"] + " - 25 points, \n"
+          + item_bag["item3"] + " - 30 points, \n"
+          + item_bag["item4"] + " - 20 points \n")
+    print("==============================================\n")
 
+    
     item_list = []
 
-    while shopping_points > 15:
+    while shopping_points >= 15:
 
-        print("Please choose an item you want: ")
-        choice = input("A or B or C or D : ")
-        if choice == "A" or choice.lower().strip() == "a":
-            print("You chose " + item_bag["item1"])
+        speak("Please choose an item you want: ")
+        choice = input("M/m - Medical Kit or S/s - Sword or g/G - Gun or B/b - Bow & Arrow:").lower()
+        if choice == "m":
+            speak("You chose " + item_bag["item1"])
             item_list.append(item_bag["item1"])
             shopping_points = shopping_points - 15
-            print("You have " + str(shopping_points) + " points left ")
-        elif choice == "B" or choice.lower().strip() == "b":
+            speak("You have " + str(shopping_points) + " points left ")
+        elif choice == "s":
             if shopping_points < 25:
-                print("You don't have enough points to buy this")
+                speak("You don't have enough points to buy this")
             else:
-                print("You chose " + item_bag["item2"])
+                speak("You chose " + item_bag["item2"])
                 item_list.append(item_bag["item2"])
                 shopping_points = shopping_points - 25
-                print("You have " + str(shopping_points) + " points left ")
-        elif choice == "C" or choice.lower().strip() == "c":
+                speak("You have " + str(shopping_points) + " points left ")
+        elif choice == "g":
             if shopping_points < 30:
-                print("You don't have enough points to buy this")
+                speak("You don't have enough points to buy this")
             else:
-                print("You chose " + item_bag["item3"])
+                speak("You chose " + item_bag["item3"])
                 item_list.append(item_bag["item3"])
                 shopping_points = shopping_points - 30
-                print("You have " + str(shopping_points) + " points left ")
-        elif choice == "D" or choice.lower().strip() == "d":
+                speak("You have " + str(shopping_points) + " points left ")
+        elif choice == "b":
             if shopping_points < 20:
-                print("You don't have enough points to buy this")
+                speak("You don't have enough points to buy this")
             else:
-                print("You chose " + item_bag["item4"])
+                speak("You chose " + item_bag["item4"])
                 item_list.append(item_bag["item4"])
                 shopping_points = shopping_points - 20
-                print("You have " + str(shopping_points) + " points left ")
+                speak("You have " + str(shopping_points) + " points left ")
         else:
-            print("Please enter a letter between A and D")
+            speak("This choice is not available, please choose again!")
 
-        print("=================================")
+        print("\n=================================\n")
 
     # friendly_itemlist - A dictionary should be implemented to have value as the no. of items and key to be the item itself.
-    friendly_itemlist = ', '.join(item_list)
-    print("Your bag has - " + friendly_itemlist)  # user friendly format list
-    print("Points left - " + str(shopping_points) + " points")
-    print("XP - " + str(xp) + " XP")
-    print("=================================")
+    if shopping_count <= 1:
+        friendly_itemlist = ', '.join(item_list)
+        speak("Your bag has - " + friendly_itemlist)  # user friendly format list
+        speak("Points left - " + str(shopping_points) + " points")
+        speak("Your XP - " + str(xp) + " XP\n")
 
+    shopping_count += 1
     return xp, shopping_points, item_list
