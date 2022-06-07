@@ -2,9 +2,7 @@ import os
 from level6 import *
 from shopping import *
 from voice import speak
-def level5(name, xp, shopping_points, current_item_list):
 import sound
-
 
 def level5(name, xp, shopping_points, current_item_list):
     # print(name, xp, shopping_points)

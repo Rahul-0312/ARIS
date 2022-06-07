@@ -149,4 +149,3 @@ def level7(name, xp, shopping_points, item_list):
     # else:
 
 # level7('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])
-

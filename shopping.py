@@ -61,7 +61,7 @@ def shopping(xp, shopping_points):
                 shopping_points = shopping_points - 20
                 speak("You have " + str(shopping_points) + " points left ")
         else:
-            speak("This choice is not available, please choose again!")
+            speak("This choice is not available!")
 
         print("\n=================================\n")
 

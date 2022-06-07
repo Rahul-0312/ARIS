@@ -1,4 +1,6 @@
 from voice import speak
+import sound
+
 def level8(name, xp, shopping_points, item_list):
     # print(name, xp, shopping_points)
     score = 0
@@ -23,7 +25,6 @@ def level8(name, xp, shopping_points, item_list):
     while q1_count_chance >= 1:
         answer1 = input("\nChoose A or B or C : ")
         if answer1.lower().strip() == "a" or answer1 == "A":
-            speak("You picked: " + question1["A"])
             sound.play_correct_answer()
             speak("Correct!")
             print("\n===========================\n")
@@ -59,7 +60,6 @@ def level8(name, xp, shopping_points, item_list):
     while q2_count_chance >= 1:
         answer2 = input("\nChoose A or B or C : ")
         if answer2.lower().strip() == "c" or answer2 == "C":
-            speak("You picked: " + question2["C"])
             sound.play_correct_answer()
             speak("Correct!")
             print("\n===========================\n")
@@ -95,7 +95,6 @@ def level8(name, xp, shopping_points, item_list):
     while q3_count_chance >= 1:
         answer3 = input("\nChoose A or B or C : ")
         if answer3.lower().strip() == "a" or answer3 == "A":
-            speak("You picked: " + question3["A"])
             sound.play_correct_answer()
             speak("Correct!")
             print("\n===========================\n")
@@ -132,7 +131,6 @@ def level8(name, xp, shopping_points, item_list):
     while q4_count_chance >= 1:
         answer4 = input("\nChoose A or B or C : ")
         if answer4.lower().strip() == "b" or answer4 == "B":
-            speak("You picked: " + question4["B"])
             sound.play_correct_answer()
             speak("Correct!")
             print("\n===========================\n")
@@ -168,7 +166,6 @@ def level8(name, xp, shopping_points, item_list):
     while q5_count_chance >= 1:
         answer5 = input("\nChoose A or B or C : ")
         if answer5.lower().strip() == "b" or answer5 == "B":
-            speak("You picked: " + question5["B"])
             sound.play_correct_answer()
             speak("Correct!")
             print("\n===========================\n")
@@ -201,3 +198,4 @@ def level8(name, xp, shopping_points, item_list):
         speak("You have lost. Better luck next time\n")
     speak("Thank you for playing the game. Goodbye!")
     print("\n===========================")
+# level8('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])
