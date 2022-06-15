@@ -67,8 +67,13 @@ def shopping(xp, shopping_points):
 
     # friendly_itemlist - A dictionary should be implemented to have value as the no. of items and key to be the item itself.
     if shopping_count <= 1:
-        friendly_itemlist = ', '.join(item_list)
-        speak("Your bag has - " + friendly_itemlist)  # user friendly format list
+        inventory = dict()
+        for item in item_list:
+            if item in inventory:
+                inventory[item] += 1
+            else:
+                inventory[item] = 1
+        speak("\nYour bag has "+' '.join([str(v) +"-"+ str(k)+". " for k,v in inventory.items()]))
         speak("Points left - " + str(shopping_points) + " points")
         speak("Your XP - " + str(xp) + " XP\n")
 

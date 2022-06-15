@@ -8,8 +8,14 @@ import sound
 def level7(name, xp, shopping_points, item_list):
     game_over = False
 
-    def friendly_list(itemlist):
-        return ', '.join(itemlist)
+    def friendly_item_list(item_list):
+        inventory = dict()
+        for item in item_list:
+            if item in inventory:
+                inventory[item] += 1
+            else:
+                inventory[item] = 1
+        speak("\nYour bag has "+' '.join([str(v) +"-"+ str(k)+". " for k,v in inventory.items()]))
 
     print("========== LEVEL 7 ==========")
     speak("\nwelcome to level-7\n")
@@ -17,28 +23,24 @@ def level7(name, xp, shopping_points, item_list):
 
     sound.play_second_monster()
     speak("Another monster comes your way!!! Use everything you have in your inventory to defeat the monster!")
-    speak(
-        """Beware of the Monster's hit right after your hit. As it will reduce your XP by 35.\nHint:- Use Medical kit 
-        from the inventory to increase your XP by 50.""")
+    speak("""Beware of the Monster's hit right after your hit. As it will reduce your XP by 35.\nHint:- Use Medical kit from the inventory to increase your XP by 50.""")
 
     # item_list.append("Gun")
     # item_list.append("Gun")
     # item_list.append("Bow and Arrow")
 
-    friendly_item_list = ', '.join(item_list)
-    speak("Your bag has - " + str(friendly_item_list))
+    friendly_item_list(item_list)
     print("\n===========================\n")
 
-    # Your bag has - Medical Kit, Sword, Gun
+    # Your bag has Medical Kit, Sword, Gun
     # user_choice = input("Choose your weapon!\n M/S/G/B where M- Medical Kit, and so onnnnnnn\n").lower().strip()
 
     while (1):
 
         speak("The Monster's XP is " + str(monster_xp))
         if xp <= 0:
-            speak("Your XP is 0")
-            #player dying sound
             sound.play_player_dies()
+            speak("Your XP is 0")
             speak("Uh oh! You're defeated by the monster")
             speak("Game Over :(")
             game_over = True
@@ -47,7 +49,7 @@ def level7(name, xp, shopping_points, item_list):
         else:
             speak("Your XP is " + str(xp))
 
-        # Your bag has - Medical Kit, Sword, Gun
+        # Your bag has Medical Kit, Sword, Gun
         user_choice = input(
             "Choose your weapon!\nM/m - Medical Kit or S/s - Sword or g/G - Gun or B/b - Bow & Arrow: ").lower().strip()
         # Have an option to choose B&A even if we don't have it on our list
@@ -55,32 +57,32 @@ def level7(name, xp, shopping_points, item_list):
             xp += 50
             item_list.remove("Medical Kit")
             speak("You've increased your XP by 50 points")
-            speak("The items left in your bag are - " + str(friendly_list(item_list)))
+            friendly_item_list(item_list)
             print("\n===========================\n")
         elif user_choice == "s" and "Sword" in item_list:
             monster_xp -= 25
             item_list.remove("Sword")
             sound.play_sword_hit()
             speak("You've hit the monster with a Sword. Damage done - 25xp")
-            speak("The items left in your bag are - " + str(friendly_list(item_list)))
+            friendly_item_list(item_list)
             print("\n===========================\n")
         elif user_choice == "g" and "Gun" in item_list:
             monster_xp -= 50
             item_list.remove("Gun")
             sound.play_gun_hit()
             speak("You've hit the monster with a Gun. Damage done - 50xp")
-            speak("The items left in your bag are - " + str(friendly_list(item_list)))
+            friendly_item_list(item_list)
             print("\n===========================\n")
         elif user_choice == "b" and "Bow and Arrow" in item_list:
             monster_xp -= 10
             item_list.remove("Bow and Arrow")
             sound.play_bow_and_arrow_hit()
             speak("You've hit the monster with a Bow and Arrow. Damage done - 10xp")
-            speak("The items left in your bag are - " + str(friendly_list(item_list)))
+            friendly_item_list(item_list)
             print("\n===========================\n")
         else:
             print("\n===========================\n")
-            speak("This choice is not available, please choose again!")
+            speak("This choice is not available.")
             print("\n===========================\n")
 
         if monster_xp > 0:
@@ -162,4 +164,4 @@ def level7(name, xp, shopping_points, item_list):
     #     print("")
     # else:
 
-# level7('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])
+# level7('raul', 10, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])

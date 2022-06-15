@@ -17,8 +17,9 @@ def level2(name, xp, shopping_points, item_list):
         sound.play_game_over_wrongchoice()
         speak("\nUh Oh! You were killed by your favourite celebrity.\n")
         speak("You have 0 XP")
+        sound.play_game_over()
         speak("Game over :( ")
-        print("\n=================================\n")
+        
 
     # Use line separators to get a better view of what's happening in terminal
     elif pair_choice == "no" or pair_choice == "n":
@@ -35,3 +36,5 @@ def level2(name, xp, shopping_points, item_list):
 
 
         level3(name, xp, shopping_points, item_list)
+
+# level2('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])

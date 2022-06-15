@@ -1,6 +1,9 @@
 from playsound import playsound
 
 
+def aris_intro():
+    return playsound("sounds/aris_intro.wav")
+
 def play_celebratory_song():
     return playsound("sounds/Celebratory.wav")
 
@@ -26,7 +29,7 @@ def play_quiz_incorrect():
 
 
 def play_win_points():
-    return playsound("sounds/acheivement.wav")
+    return playsound("sounds/chestopen.wav")
 
 
 def level_complete():

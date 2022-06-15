@@ -17,7 +17,13 @@ def level6(name, xp, shopping_points, item_list):
     speak(question)
 
     cnt = 3
-    while cnt >= 1:
+    while cnt >= 0:
+        if cnt == 0:
+            speak("Your XP is 0")
+            sound.play_game_over()
+            speak("Game Over :(")
+            cnt = -1
+            break
         user_answer = input("\n").lower()
         cnt -= 1
         if user_answer == riddles[question].lower():
@@ -29,24 +35,28 @@ def level6(name, xp, shopping_points, item_list):
             sound.play_wrong_answer()
             speak("Wrong Answer! You have " + str(cnt) + " chances left")
             print("\n===========================\n")
+   
     if cnt == 2:
         item_list.append("Gun")
         sound.play_win_points()
         speak("Hurray! You got it at the first try, you got an extra Gun added to your inventory")
+        sound.level_complete()
+        level7(name, xp, shopping_points, item_list)
         print("\n===========================\n")
     elif cnt == 1:
         item_list.append("Sword")
         sound.play_win_points()
         speak("Yippee! You got it at the second try, you got an extra Sword added to your inventory")
+        sound.level_complete()
+        level7(name, xp, shopping_points, item_list)
         print("\n===========================\n")
     elif cnt == 0:
         item_list.append("Bow and Arrow")
         item_list.append("Bow and Arrow")
         sound.play_win_points()
         speak("Finally! You got it in the last try, you got two extra Bow and Arrows added to your inventory")
+        sound.level_complete()
+        level7(name, xp, shopping_points, item_list)
         print("\n===========================\n")
 
-    # print(name, xp, shopping_points)
-    sound.level_complete()
-    level7(name, xp, shopping_points, item_list)
 # level6('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])

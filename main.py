@@ -9,6 +9,7 @@ os.system('clear') #clears the terminal before running the script
 
 
 speak("WELCOME TO ARIS")
+sound.aris_intro()
 print("=================================\n")
 speak("Do you want to play the game?")
 
@@ -29,8 +30,7 @@ while(1):
         speak("\nWelcome to ARIS, " + name+"!\n")
 
         # Level 1
-        # level1(name, xp, shopping_points)
-        level7('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword', 'Bow and Arrow', 'Gun'])
+        level1(name, xp, shopping_points)
         break
 
         # Level 2 is called from level 1 now

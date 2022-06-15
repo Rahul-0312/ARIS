@@ -8,7 +8,7 @@ import sound
 def level3(name, xp, shopping_points, item_list):
     print("========== LEVEL 3 ==========")
     speak("\nwelcome to level-3\n")
-    speak("Oh! that's one fast flowing river. You need to find out a way to cross this river.")
+    speak("Oh! that's one fast flowing river. You need to find a way to cross this river.")
     speak("Look around. You can see some options to cross the river. Choose wisely!")
     print("\n==============================\n")
 
@@ -17,8 +17,7 @@ def level3(name, xp, shopping_points, item_list):
     speak("Option C - Are you brave enough to swim across the river?")
     print("\n==============================\n")
 
-    print(
-        "Choose your option!\nHint: Two of the options takes you closer to the treasure while the other one leads to DEATH!")
+    speak("Choose your option!\nHint: Two of the options takes you closer to the treasure while the other one leads to DEATH!")
 
     choice = input("A, B or C\n").lower()
 
@@ -26,8 +25,8 @@ def level3(name, xp, shopping_points, item_list):
         sound.play_game_over_wrongchoice()
         speak("\nUh Oh! The boat had a hole. You drowned")
         speak("You have 0 XP")
+        sound.play_game_over()
         speak("Game over :( ")
-        print("\n==============================\n")
 
     elif choice == "B" or choice.lower().strip() == "b":
         sound.play_correct_answer()
@@ -55,3 +54,5 @@ def level3(name, xp, shopping_points, item_list):
         speak("Good job - on to level 4\n")
         sound.level_complete()
         level4(name, xp, shopping_points, item_list)
+
+# level3('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])

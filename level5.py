@@ -51,12 +51,17 @@ def level5(name, xp, shopping_points, current_item_list):
     for item in current_item_list:
         item_list.append(item)
 
-    friendly_itemlist = ', '.join(item_list)
-    speak("Your bag has - " + friendly_itemlist)  # user friendly format list
+    inventory = dict()
+    for item in item_list:
+        if item in inventory:
+            inventory[item] += 1
+        else:
+            inventory[item] = 1
+    speak("\nYour bag has "+' '.join([str(v) +"-"+ str(k)+". " for k,v in inventory.items()]))
     speak("Points left - " + str(shopping_points) + " points")
-    speak("Your XP - " + str(xp) + " XP")
+    speak("Your XP - " + str(xp) + " XP\n")
     print("\n===========================\n")
     sound.level_complete()
     level6(name, xp, shopping_points, item_list)
 
-# level5('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])
+level5('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])
