@@ -3,11 +3,13 @@ from level4 import *
 from level1 import *
 from voice import speak
 import sound
+from playsound import playsound
 
 
 def level3(name, xp, shopping_points, item_list):
     print("========== LEVEL 3 ==========")
     speak("\nwelcome to level-3\n")
+    playsound("sounds/river_flowing.wav")
     speak("Oh! that's one fast flowing river. You need to find a way to cross this river.")
     speak("Look around. You can see some options to cross the river. Choose wisely!")
     print("\n==============================\n")
@@ -55,4 +57,4 @@ def level3(name, xp, shopping_points, item_list):
         sound.level_complete()
         level4(name, xp, shopping_points, item_list)
 
-# level3('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])
+level3('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])

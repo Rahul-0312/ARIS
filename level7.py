@@ -88,7 +88,7 @@ def level7(name, xp, shopping_points, item_list):
         if monster_xp > 0:
             sound.play_second_monster_hit()
             speak("The monster hits you")
-            speak("Your XP is reduced by 25")
+            speak("Your XP is reduced by 35")
             print("\n===========================\n")
             xp -= 35
         else:

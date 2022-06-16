@@ -64,4 +64,4 @@ def level5(name, xp, shopping_points, current_item_list):
     sound.level_complete()
     level6(name, xp, shopping_points, item_list)
 
-level5('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])
+# level5('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])
