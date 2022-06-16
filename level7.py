@@ -23,7 +23,8 @@ def level7(name, xp, shopping_points, item_list):
 
     sound.play_second_monster()
     speak("Another monster comes your way!!! Use everything you have in your inventory to defeat the monster!")
-    speak("""Beware of the Monster's hit right after your hit. As it will reduce your XP by 35.\nHint:- Use Medical kit from the inventory to increase your XP by 50.""")
+    speak("""Beware of the Monster's hit right after your hit. As it will reduce your XP by 35.\nHint:- Use Medical 
+    kit from the inventory to increase your XP by 50.""")
 
     # item_list.append("Gun")
     # item_list.append("Gun")

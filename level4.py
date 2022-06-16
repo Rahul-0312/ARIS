@@ -15,7 +15,7 @@ def level4(name, xp, shopping_points, item_list):
                 inventory[item] += 1
             else:
                 inventory[item] = 1
-        speak("\nYour bag has "+' '.join([str(v) +"-"+ str(k)+". " for k,v in inventory.items()]))
+        speak("\nYour bag has " + ' '.join([str(v) + "-" + str(k) + ". " for k, v in inventory.items()]))
         # return ', '.join(item_list)
 
     monster_xp = 50
@@ -25,7 +25,9 @@ def level4(name, xp, shopping_points, item_list):
     sound.play_first_monster()
     speak("Uh Oh! A monster's coming in your way. Open your inventory and look for an item to defeat him.\n")
     # speak("Monster XP - " + str(monster_xp))
-    speak("""Beware of the Monster's hit right after your hit. As it will reduce your XP by 25.\nHint:- Use Medical kit from the inventory to increase your XP by 50.""")
+    speak(
+        """Beware of the Monster's hit right after your hit. As it will reduce your XP by 25.\nHint:- Use Medical kit 
+        from the inventory to increase your XP by 50.""")
     friendly_item_list(item_list)
     print("\n===========================\n")
     # We need item_list here in level 4
@@ -51,29 +53,33 @@ def level4(name, xp, shopping_points, item_list):
         if user_choice == "m" and "Medical Kit" in item_list:
             xp += 50
             item_list.remove("Medical Kit")
-            speak("You've increased your XP by 50 points")
-            friendly_item_list(item_list)
+            speak("You've increased your XP by 50")
+            if len(item_list) != 0:
+                friendly_item_list(item_list)
             print("\n===========================\n")
         elif user_choice == "s" and "Sword" in item_list:
             monster_xp -= 25
             item_list.remove("Sword")
             sound.play_sword_hit()
             speak("You've hit the monster with a Sword. Damage done - 25 xp")
-            friendly_item_list(item_list)
+            if len(item_list) != 0:
+                friendly_item_list(item_list)
             print("\n===========================\n")
         elif user_choice == "g" and "Gun" in item_list:
             monster_xp -= 50
             item_list.remove("Gun")
             sound.play_gun_hit()
             speak("You've hit the monster with a Gun. Damage done - 50 xp")
-            friendly_item_list(item_list)
+            if len(item_list) != 0:
+                friendly_item_list(item_list)
             print("\n===========================\n")
         elif user_choice == "b" and "Bow and Arrow" in item_list:
             monster_xp -= 10
             item_list.remove("Bow and Arrow")
             sound.play_bow_and_arrow_hit()
             speak("You've hit the monster with a Bow and Arrow. Damage done - 10 xp")
-            friendly_item_list(item_list)
+            if len(item_list) != 0:
+                friendly_item_list(item_list)
             print("\n===========================\n")
         else:
             print("\n===========================\n")
@@ -95,6 +101,6 @@ def level4(name, xp, shopping_points, item_list):
         sound.play_monster_dies()
         speak("Well Done! You've defeated the monster! Take away your rewards - Extra 20 XP and 10 shopping points\n")
         sound.level_complete()
-        level5(name, xp, shopping_points, item_list)
+        level8(name, xp, shopping_points, item_list)
 
-# level4('raul', 10, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])
+# level4('raul', 50, 20, ['Gun', 'Bow and Arrow', 'Medical Kit', 'Sword'])

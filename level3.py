@@ -19,7 +19,9 @@ def level3(name, xp, shopping_points, item_list):
     speak("Option C - Are you brave enough to swim across the river?")
     print("\n==============================\n")
 
-    speak("Choose your option!\nHint: Two of the options takes you closer to the treasure while the other one leads to DEATH!")
+    speak(
+        "Choose your option!\nHint: Two of the options takes you closer to the treasure while the other one leads to "
+        "DEATH!")
 
     choice = input("A, B or C\n").lower()
 
@@ -57,4 +59,5 @@ def level3(name, xp, shopping_points, item_list):
         sound.level_complete()
         level4(name, xp, shopping_points, item_list)
 
-level3('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])
+
+# level3('raul', 70, 20, ['Gun', 'Sword', 'Medical Kit', 'Sword'])

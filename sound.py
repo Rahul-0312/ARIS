@@ -4,6 +4,7 @@ from playsound import playsound
 def aris_intro():
     return playsound("sounds/aris_intro.wav")
 
+
 def play_celebratory_song():
     return playsound("sounds/Celebratory.wav")
 

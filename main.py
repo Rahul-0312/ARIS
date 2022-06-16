@@ -4,16 +4,14 @@ import sound
 from level2 import level2
 from voice import speak
 
-os.system('clear') #clears the terminal before running the script
-
-
+os.system('clear')  # clears the terminal before running the script
 
 speak("WELCOME TO ARIS")
 sound.aris_intro()
 print("=================================\n")
 speak("Do you want to play the game?")
 
-while(1):
+while 1:
     speak("If Yes enter (Yes or y) else No (No or n)")
     response = input()
     name = ""
@@ -27,7 +25,7 @@ while(1):
         print("\n=================================\n")
         speak("Enter your name: ")
         name = input()
-        speak("\nWelcome to ARIS, " + name+"!\n")
+        speak("\nWelcome to ARIS, " + name + "!\n")
 
         # Level 1
         level1(name, xp, shopping_points)

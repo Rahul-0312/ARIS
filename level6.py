@@ -8,7 +8,8 @@ def level6(name, xp, shopping_points, item_list):
     print("========== LEVEL 6 ==========")
     speak("\nwelcome to level-6\n")
     riddles = {
-        "What can run but never walk, has a mouth but never talks, has a head but never weeps, has a bed but never sleeps?": "River",
+        "What can run but never walk, has a mouth but never talks, has a head but never weeps, has a bed but never "
+        "sleeps?": "River",
         "What is the capital in France": "F",
         "I have lakes with no water, mountains with no stone, and cities with no buildings. What am I?": "Map",
         "What begins with an “e” and only contains one letter?": "Envelope",
